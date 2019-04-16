@@ -11,7 +11,7 @@ class Home extends Component {
                 <div>Welcome to Home</div>
                 <Footer />
             </div>
-        )
+        );
     }
 }
 

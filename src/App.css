@@ -1,0 +1,55 @@
+body {
+    background-color: #000;
+}
+
+@font-face {
+    font-family: 'Prompt-Regular';
+    src: url('/fonts/Prompt-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Prompt-Medium';
+    src: url('/fonts/Prompt-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Prompt-Bold';
+    src: url('/fonts/Prompt-Bold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Prompt-Medium';
+}
+
+.title {
+    font-family: 'Prompt-Regular';
+}
+
+.bold {
+    font-family: 'Prompt-Bold';
+}
+
+
+.text-orange {
+    color: #eb8923;
+}
+
+.bg-orange {
+    background-color: #eb8923;
+}
+
+.bg-grey1 {
+    background-color: #111111;
+}
+
+.bg-grey2 {
+    background-color: #212121;
+}
+
+.bg-grey3 {
+    background-color: #303030;
+}
+
+.bg-grey4 {
+    background-color: #424242;
+}

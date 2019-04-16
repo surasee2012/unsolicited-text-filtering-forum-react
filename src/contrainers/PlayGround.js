@@ -11,7 +11,7 @@ class PlayGround extends Component {
                 <div>Welcome to Playground</div>
                 <Footer />
             </div>
-        )
+        );
     }
 }
 
