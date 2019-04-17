@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PostList from '../components/post/PostList'
 
 class Home extends Component {
 
@@ -8,7 +9,7 @@ class Home extends Component {
         return (
             <div>
                 <Header />
-                <div>Welcome to Home</div>
+                <PostList />
                 <Footer />
             </div>
         );
