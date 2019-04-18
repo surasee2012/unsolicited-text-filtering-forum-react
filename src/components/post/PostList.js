@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PostHeader from './PostHeader';
 import PostItem from './PostItem'
 
 class PostList extends Component {
@@ -6,7 +7,8 @@ class PostList extends Component {
     render() {
         return (
             <div>
-                <div className='container bg-grey1'>
+                <div className='container'>
+                    <PostHeader />
                     <PostItem />
                     <PostItem />
                     <PostItem />
