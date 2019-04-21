@@ -1,10 +1,11 @@
-import axios from "axios";
+import { postsRef } from '../database/Firebase';
 import { POSTS_FETCH } from "./types";
 
-export const postsFetch = () => {
-	return dispatch => {
-		axios
-			.get("http://localhost:3005/posts")
-			.then(res => dispatch({ type: POSTS_FETCH, payload: res.data }));
-	};
+export const postsFetch = () => async dispatch => {
+	postsRef.on("value", snapshot => {
+		dispatch({
+			type: POSTS_FETCH,
+			payload: snapshot.val()
+		});
+	});
 };
