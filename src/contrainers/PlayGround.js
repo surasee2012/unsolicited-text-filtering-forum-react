@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class PlayGround extends Component {
 
@@ -8,6 +9,7 @@ class PlayGround extends Component {
             <div>
                 <Header />
                 <div>Welcome to Playground</div>
+                <Footer />
             </div>
         );
     }
