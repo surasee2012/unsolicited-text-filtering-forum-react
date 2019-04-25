@@ -12,7 +12,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className='mb-3'>
                 <Header />
                 <PostList posts={this.props.posts}/>
             </div>

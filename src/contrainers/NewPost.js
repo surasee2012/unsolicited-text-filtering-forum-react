@@ -25,7 +25,7 @@ class NewPost extends Component {
     render() {
         const { formValues } = this.props;
         return (
-            <div>
+            <div className='mb-3'>
                 <Header />
                 <PostForm onPostSubmit={() => this.mapValuesToFirebase(formValues)} />
             </div>
