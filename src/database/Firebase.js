@@ -13,4 +13,6 @@ const databaseRef = firebase.database().ref();
 
 export const postsRef = databaseRef.child("posts");
 
+export const postRef = key => databaseRef.child("posts").child(key);
+
 export const commmentsRef = key => databaseRef.child("comments").child(key);

@@ -19,14 +19,14 @@ class PostList extends Component {
 
     showPosts() {
         let posts = this.getData(this.props.posts);
-        console.log(posts);
         return (
             posts &&
             posts.map(post => (
                 <PostItem key={post.key}
                     topic={post.topic}
                     author={post.author}
-                    lastUpdate={post.lastUpdate} />
+                    lastUpdate={post.lastUpdate}
+                    postKey={post.key} />
             ))
         );
     }

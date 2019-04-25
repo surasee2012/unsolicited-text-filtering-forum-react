@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { postCreate, commentCreate } from "../actions";
 import Header from '../components/Header';
-import PostForm from '../components/new_post/PostForm'
+import CommonForm from '../components/common/CommonForm'
+import { postFormField } from "../components/new_post/postFormField";
 
 class NewPost extends Component {
 
@@ -27,14 +28,14 @@ class NewPost extends Component {
         return (
             <div className='mb-3'>
                 <Header />
-                <PostForm onPostSubmit={() => this.mapValuesToFirebase(formValues)} />
+                <CommonForm formField={postFormField} onPostSubmit={() => this.mapValuesToFirebase(formValues)} />
             </div>
         );
     }
 }
 
 function mapStateToProps({ form }) {
-    return { formValues: form.postForm ? form.postForm.values : null };
+    return { formValues: form.commonForm ? form.commonForm.values : null };
 }
 
 export default connect(mapStateToProps, { postCreate, commentCreate })(NewPost);

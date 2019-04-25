@@ -6,7 +6,7 @@ class PostItem extends Component {
     render() {
         return (
             <div>
-                <Link className='d-flex justify-content-center text-white' to='/post'>
+                <Link className='d-flex justify-content-center text-white' to={'/post/' + this.props.postKey}>
                     <div className='col-md-7 bg-grey1 border'>
                         <div className='row'>
                             <div className='ml-1 p-1'>
