@@ -1,10 +1,10 @@
 import {
-	POSTS_FETCH
+	COMMENTS_FETCH
 } from "../actions/types";
 
 export default function (state = [], action) {
 	switch (action.type) {
-		case POSTS_FETCH:
+		case COMMENTS_FETCH:
 			return action.payload;
 		default:
 			return state;

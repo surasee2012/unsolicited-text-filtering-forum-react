@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './contrainers/Home';
 import PlayGround from './contrainers/PlayGround';
+import NewPost from './contrainers/NewPost';
 
 class App extends Component {
 
@@ -12,6 +13,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/playground" component={PlayGround} />
+        <Route exact path="/newpost" component={NewPost} />
       </Switch>
     );
   }

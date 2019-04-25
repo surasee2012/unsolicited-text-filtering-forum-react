@@ -41,3 +41,15 @@ h1, h2, h3, h4, h5, h6 {
 .bg-grey1 {
     background-color: #272727;
 }
+
+.btn-orange {
+    color:#fff;
+    background-color: #eb8923;
+    border-color: #bb6f1e
+}
+
+.btn-orange:hover{
+    color:#fff;
+    background-color:#dd7301;
+    border-color:#bb6f1e
+}

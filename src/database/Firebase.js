@@ -11,4 +11,6 @@ var config = {
 firebase.initializeApp(config);
 const databaseRef = firebase.database().ref();
 
-export const postsRef = databaseRef.child("posts")
+export const postsRef = databaseRef.child("posts");
+
+export const commmentsRef = key => databaseRef.child("comments").child(key);

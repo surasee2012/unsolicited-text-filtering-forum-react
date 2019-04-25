@@ -13,7 +13,7 @@ class PostItem extends Component {
                                 <img style={{ height: 25 }} src='/images/logo/post icon.png' />
                             </div>
                             <div className='p-1'>
-                                {this.props.title}
+                                {this.props.topic}
                             </div>
                         </div>
                     </div>
@@ -21,7 +21,7 @@ class PostItem extends Component {
                         <div className='text-center'>{this.props.author}</div>
                     </div>
                     <div className='col-md-2 py-1 bg-grey1 border'>
-                        <div className='text-center'>{this.props.dateTime}</div>
+                        <div className='text-center'>{this.props.lastUpdate}</div>
                     </div>
                 </Link>
             </div>
