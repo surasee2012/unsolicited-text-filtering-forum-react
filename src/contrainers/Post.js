@@ -34,7 +34,7 @@ class Home extends Component {
         return (
             <div className='mb-3'>
                 <Header />
-                <CommentList post={posts} comments={comments} />
+                <CommentList post={posts.post} comments={comments} />
                 <CommonForm formField={commentFormField} onPostSubmit={() => this.mapValuesToFirebase(formValues)} />
             </div>
         );

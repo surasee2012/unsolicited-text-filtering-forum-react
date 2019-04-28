@@ -14,7 +14,7 @@ class Home extends Component {
         return (
             <div className='mb-3'>
                 <Header />
-                <PostList posts={this.props.posts} />
+                <PostList posts={this.props.posts.posts} />
             </div>
         );
     }
