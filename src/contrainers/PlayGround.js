@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import CLFMonitor from '../components/playground/CLFMonitor';
+import { connect } from "react-redux";
 
-class PlayGround extends Component {
+class Playground extends Component {
 
     render() {
         return (
             <div>
                 <Header />
-                <div>Welcome to Playground</div>
+                <CLFMonitor />
             </div>
         );
     }
 }
 
-export default PlayGround;
+export default Playground;

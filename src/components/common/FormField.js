@@ -6,7 +6,7 @@ export default ({ input, label, type, required, }) => {
 			<label className="title" >{label}</label>
 			{input.name != 'content' ?
 				(<input type={type} required={required} {...input} className="form-control" />) :
-				(<textarea type={type} required={required} {...input} className="form-control" style={{height: "150px"}} />)}
+				(<textarea type={type} required={required} {...input} className="form-control" style={{height: "200px"}} />)}
 		</div>
 	);
 };

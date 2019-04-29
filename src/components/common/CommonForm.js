@@ -43,7 +43,6 @@ class CommonForm extends Component {
 	}
 }
 
-// Form = reduxForm({ form: "postForm" })(Form);
 CommonForm = reduxForm({ form: "commonForm" })(CommonForm);
 
 export default connect()(CommonForm);
