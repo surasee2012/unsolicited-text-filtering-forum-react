@@ -27,7 +27,7 @@ class CommonForm extends Component {
 				<div className='d-flex justify-content-center'>
 					<div className='col-md-11 bg-grey1 p-2 border'>
 						<form onSubmit={this.props.handleSubmit(onPostSubmit)}>
-							<div className='title text-white'>
+							<div className='text-white'>
 								{this.renderFields(formField)}
 							</div>
 							<div className='d-flex justify-content-end'>

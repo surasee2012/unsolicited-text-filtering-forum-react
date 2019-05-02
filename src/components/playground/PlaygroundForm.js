@@ -26,7 +26,7 @@ class PlaygroundForm extends Component {
         const { formField, onType } = this.props;
         return (
             <form onChange={onType}>
-                <div className='title text-white'>
+                <div className='text-white'>
                     {this.renderFields(formField)}
                 </div>
             </form>
