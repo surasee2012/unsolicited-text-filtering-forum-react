@@ -19,21 +19,34 @@ class CLFMonitor extends Component {
     }
 
     triggerChange = () => {
-        axios.get("http://localhost:3001/clf").then(res => {
-            this.setState({ clfResult: res.data });
-        });
+        const { formValues } = this.props;
+        formValues &&
+            axios.post("http://127.0.0.1:8000/text_clf_api/", {
+                text: formValues.content
+            }).then(res => {
+                this.setState({ clfResult: res.data });
+                console.log(res.data);
+            });
+        !formValues &&
+            this.setState({ clfResult: null });
     }
 
     resultMap() {
-        const { agg, obs, spm } = this.state.clfResult;
-        return (
-            <div className='mt-2'>
-                เป็นข้อความก้าวร้าวหยาบคาย: {agg ? 'ใช้' : 'ไม่ใช่'}<br />
-                เป็นข้อความลามกอนาจาร: {obs ? 'ใช้' : 'ไม่ใช่'}<br />
-                เป็นข้อความที่เป็นสแปม: {spm ? 'ใช้' : 'ไม่ใช่'}<br />
-            </div>
-        )
+        if (this.state.clfResult) {
+            const {agg, obs, spm} = this.state.clfResult;
+            return (
+                <div className='mt-2'>
+                    ข้อความก้าวร้าวหยาบคาย: {agg.result ? 'ใช้' : 'ไม่ใช่'}<br />
+                    อัตราความน่าจะเป็น {agg.prob_0} : {agg.prob_1}<br /><br />
+                    ข้อความลามกอนาจาร: {obs.result ? 'ใช้' : 'ไม่ใช่'}<br />
+                    อัตราความน่าจะเป็น {obs.prob_0} : {obs.prob_1}<br /><br />
+                    ข้อความที่เป็นสแปม: {spm.result ? 'ใช้' : 'ไม่ใช่'}<br />
+                    อัตราความน่าจะเป็น {spm.prob_0} : {spm.prob_1}<br /><br />
+                </div>
+            )
+        }
     }
+
 
     render() {
         return (
