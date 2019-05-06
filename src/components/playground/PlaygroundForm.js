@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { reduxForm, Field } from "redux-form";
 import FormField from "../common/FormField";
 
-const WAIT_INTERVAL = 1000;
-
 class PlaygroundForm extends Component {
 
     renderFields(formFields) {

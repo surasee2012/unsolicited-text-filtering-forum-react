@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import axios from "axios";
 import PlaygroundForm from './PlaygroundForm'
 import { playgroundFormField } from './playgroundFormField';
 import { connect } from "react-redux";
-import axios from "axios";
 
 const WAIT_INTERVAL = 1000
 
@@ -10,7 +10,7 @@ class CLFMonitor extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { clfResult: "" };
+        this.state = { clfResult: null };
     }
 
     handleChange = () => {
@@ -22,10 +22,11 @@ class CLFMonitor extends Component {
         const { formValues } = this.props;
         formValues &&
             axios.post("http://127.0.0.1:8000/text_clf_api/", {
-                text: formValues.content
+                clfs: ['*'],
+                prob: 1,
+                texts: [formValues.content]
             }).then(res => {
                 this.setState({ clfResult: res.data });
-                console.log(res.data);
             });
         !formValues &&
             this.setState({ clfResult: null });
@@ -33,14 +34,14 @@ class CLFMonitor extends Component {
 
     resultMap() {
         if (this.state.clfResult) {
-            const {agg, obs, spm} = this.state.clfResult;
+            const {agg, obs, spm} = this.state.clfResult.t0;
             return (
                 <div className='mt-2'>
-                    ข้อความก้าวร้าวหยาบคาย: {agg.result ? 'ใช้' : 'ไม่ใช่'}<br />
+                    ข้อความก้าวร้าวหยาบคาย: {agg.pred ? 'ใช้' : 'ไม่ใช่'}<br />
                     อัตราความน่าจะเป็น {agg.prob_0} : {agg.prob_1}<br /><br />
-                    ข้อความลามกอนาจาร: {obs.result ? 'ใช้' : 'ไม่ใช่'}<br />
+                    ข้อความลามกอนาจาร: {obs.pred ? 'ใช้' : 'ไม่ใช่'}<br />
                     อัตราความน่าจะเป็น {obs.prob_0} : {obs.prob_1}<br /><br />
-                    ข้อความที่เป็นสแปม: {spm.result ? 'ใช้' : 'ไม่ใช่'}<br />
+                    ข้อความที่เป็นสแปม: {spm.pred ? 'ใช้' : 'ไม่ใช่'}<br />
                     อัตราความน่าจะเป็น {spm.prob_0} : {spm.prob_1}<br /><br />
                 </div>
             )

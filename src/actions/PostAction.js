@@ -29,3 +29,7 @@ export const postCreate = newPost => async dispatch => {
 	dispatch(reset('commonForm'));
 	return newPostRef.key;
 };
+
+export const postUpdateTimestamp = (key, timestamp) => async dispatch => {
+	postRef(key).update({'lastUpdate': timestamp});
+};

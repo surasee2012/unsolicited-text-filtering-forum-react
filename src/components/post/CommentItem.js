@@ -1,22 +1,23 @@
 import React, { Component } from "react";
+import { timestampToDateTime } from '../common/commonFunc';
 
 class CommentItem extends Component {
 
     render() {
-        const { topic, num, author, content, dateTime } = this.props;
+        const { topic, num, author, content, timestamp } = this.props;
         return (
             <div className='d-flex justify-content-center mb-3'>
                 <div className='col-md-11 border bg-grey1 text-white'>
                     <div className='row'>
                         <div className='col-md-3 border'>
                             <div className='d-flex justify-content-center my-2'>
-                                <img className='p-1 border' style={{ height: 120, width: 115 }} src='/images/logo/user.png' />
+                                <img className='p-1 border' style={{ height: 120, width: 115 }} src='/images/logo/user.png' alt="user icon"/>
                             </div>
                             <div className="text-center">
                                 {author}
                             </div>
                             <div className="mb-4 text-center">
-                                {dateTime}
+                                {timestampToDateTime(timestamp)}
                             </div>
                         </div>
                         <div className='col-md-9 border'>

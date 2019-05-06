@@ -9,7 +9,7 @@ const Header = () => {
                     <div className="row">
                         <div className='col-md-6 text-left mt-3'>
                             <h3 className='bold text-orange'>
-                                <img style={{ height: 50 }} src='/images/logo/logo.png' />{' '}
+                                <img style={{ height: 50 }} src='/images/logo/logo.png' alt="logo"/>{' '}
                                 THE TALK
                             </h3>
                         </div>
