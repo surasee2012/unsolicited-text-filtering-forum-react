@@ -30,8 +30,8 @@ class NewPost extends Component {
                 timestamp
             };
             commentCreate(key, newComment);
+            this.props.history.push('post/' + key);
         });
-        this.props.history.push('');
     }
 
     textFilter(formValues) {
