@@ -13,10 +13,18 @@ class CommonForm extends Component {
 		return newArr;
 	}
 
+	clfObjToArr(obj) {
+		let arr = [];
+		let obj_size = Object.keys(obj).length;
+		for (let i = 0; i < obj_size; i++) {
+			arr[i] = obj['t' + i]
+		}
+		return arr;
+	}
+
 	renderFields(formFields, clfResult) {
 		if (clfResult) {
-			clfResult = Object.values(clfResult);
-			clfResult.unshift(clfResult.pop()); // to correct index
+			clfResult = this.clfObjToArr(clfResult);
 			formFields = this.mergeTwoObjArrs(formFields, clfResult);
 		}
 		return formFields.map(({ label, name, type, required, agg, obs, spm }) => {
